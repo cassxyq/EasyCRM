@@ -1,8 +1,8 @@
 **How to run?**
 
-`minikube start --driver=virtualbox`
+<!-- `minikube start --driver=virtualbox`
 
-`minikube addons enable ingress`
+`minikube addons enable ingress` -->
 
 `kubectl apply -f namespace.yaml`
 
