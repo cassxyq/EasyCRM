@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+    easycrmapp:
+        image: dextdz/easycrm:v1.0
+        build: ./
+        ports:
+            - "8090:8090"
+        networks:
+            - easycrm-net
+
+    nginx:
+        image: nginx
+        build:
+            context: ./nginx
+            dockerfile: Dockerfile
+        container_name: nginx
+        hostname: nginx
+        ports:
+            - "80:80" 
+        depends_on:
+            - easycrmapp
+        networks:
+            - easycrm-net
+
+networks:
+    easycrm-net:
+        external: true

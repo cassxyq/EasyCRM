@@ -1,6 +1,7 @@
 from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
+# app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 from app.auth import User
 
